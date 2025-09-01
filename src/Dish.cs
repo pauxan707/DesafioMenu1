@@ -14,9 +14,9 @@ namespace Ucu.Poo.Restaurant
         //met constructor objeto 
         public Dish(string name, decimal price, bool isVegetarian)
         {
-            this.Name = name;
-            this.Price = price;
-            this.IsVegetarian = isVegetarian;
+            Name = name;
+            Price = price;
+            IsVegetarian = isVegetarian;
         }
         
         //met para mostrar la info del platillo
