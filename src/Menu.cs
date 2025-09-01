@@ -32,9 +32,14 @@ namespace Ucu.Poo.Restaurant
 
         public string PresentDish(Dish dish)
         {
-            Console.WriteLine($"El plato {dish.Name}, de ${dish.Price}, {dish.IsVegetarian}");
+            string vegStatus = "no";
+            if (dish.IsVegetarian)
+            {
+                vegStatus = "Si";
+            }
+            Console.WriteLine($"El plato {dish.Name}, de ${dish.Price}, Vegetariano:{dish.IsVegetarian}");
             
-            return $"El plato {dish.Name}, de ${dish.Price}, {dish.IsVegetarian}";
+            return $"El plato {dish.Name}, de ${dish.Price}, Vegetariano:{vegStatus}";
         }
 
 
