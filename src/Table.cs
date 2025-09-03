@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Ucu.Poo.Restaurant
 {
@@ -7,11 +9,37 @@ namespace Ucu.Poo.Restaurant
     /// </summary>
     public class Table
     {
-        private List<Dish> order = new List<Dish>();
+        public int Number { get; set; }
 
+        public Table(int number)
+        {
+            Number = number;
+        }
+        
+        private List<Dish> _order = new List<Dish>();
+        public bool IsOccupied { get; set; }
         public bool HasOrders()
         {
-            return this.order.Count > 0;
+            return this._order.Count > 0;
+        }
+
+        public void ShowOrder(Table table)
+        {
+            Console.WriteLine(table._order);
+        }
+        public void AddToOrder(Dish dish)
+        {
+            this._order.Add(dish);
+        }
+        public void Ocupy()
+        {
+            this.IsOccupied = true;
+        }
+
+        public void Free()
+        {
+            this.IsOccupied = false;
+            this._order.Clear();
         }
     }
 }

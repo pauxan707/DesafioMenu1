@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Ucu.Poo.Restaurant
 {
@@ -7,6 +8,23 @@ namespace Ucu.Poo.Restaurant
     /// </summary>
     public class Waiter
     {
-        private List<Table> assignedTables = new List<Table>();
+        public string Name { get; set; }
+
+        public Waiter(string name)
+        {
+            Name = name;
+        }
+        
+        private List<Table> _assignedTables = new List<Table>();
+        
+        public void AssignTable(Table table)
+        {
+            this._assignedTables.Add(table);
+        }
+
+        public void TakeOrder(Table table, Dish dish)
+        {
+            table.AddToOrder(dish);
+        }
     }
 }

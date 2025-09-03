@@ -8,9 +8,9 @@ namespace Ucu.Poo.Restaurant
     {
         public string Name { get; set; }
         public bool IsVegetarian { get; set; }
-        public decimal Price { get; set; }
+        public double Price { get; set; }
         
-        public Dish(string name, decimal price, bool isVegetarian)
+        public Dish(string name, double price, bool isVegetarian)
         {
             Name = name;
             Price = price;

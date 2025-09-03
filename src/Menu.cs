@@ -30,18 +30,18 @@ namespace Ucu.Poo.Restaurant
             }
         }
 
-        public string PresentDish(Dish dish)
+        public string GetDishByName(Dish dish)
         {
             string vegStatus = "no";
             if (dish.IsVegetarian)
             {
                 vegStatus = "Si";
             }
-            Console.WriteLine($"El plato {dish.Name}, de ${dish.Price}, Vegetariano:{dish.IsVegetarian}");
+            Console.WriteLine($"El plato {dish.Name}, de ${dish.Price}, Vegetariano:{vegStatus}");
             
             return $"El plato {dish.Name}, de ${dish.Price}, Vegetariano:{vegStatus}";
         }
 
-
+        
     }
 }
