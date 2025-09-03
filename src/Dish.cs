@@ -6,6 +6,8 @@ namespace Ucu.Poo.Restaurant
     /// </summary>
     public class Dish //clase
     {
+      featuremenu
+        
         //atributos
         public string Name { get; set; } 
         public decimal Price { get; set; }
@@ -25,6 +27,7 @@ namespace Ucu.Poo.Restaurant
             Console.WriteLine($"Platillo: {Name}");
             Console.WriteLine($"Precio: {Price}");
             Console.WriteLine($"Es Vegetariano?: {IsVegetarian}");
+       main
         }
     }
 } 

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Ucu.Poo.Restaurant
 {
@@ -9,31 +10,27 @@ namespace Ucu.Poo.Restaurant
     public class Waiter
 
     {
-        public string Name
-        {
-            get;
-            set;
-        }
-        
-        private List<Table> assignedTables = new List<Table>();
+      featuremenu
+        public string Name { get; set; }
 
-        public void assignTable(Table table)
+        public Waiter(string name)
         {
-            this.assignedTables.Add(table);
+            Name = name;
         }
         
+        private List<Table> _assignedTables = new List<Table>();
+        
+        public void AssignTable(Table table)
+        {
+            this._assignedTables.Add(table);
+        }
+
         public void TakeOrder(Table table, Dish dish)
         {
-            if (!assignedTables.Contains(table))
-            {
-                throw new InvalidOperationException($"La mesa no está asignada al mozo {Name}");
-            }
-        
-            // Agregar el platillo a la orden de la mesa
             table.AddToOrder(dish);
-
         }
 
+  }
 
 
 
@@ -44,6 +41,8 @@ namespace Ucu.Poo.Restaurant
 
 
 
+
+main
     }
 
 
